@@ -301,7 +301,7 @@ template <int NumComps>
 struct ComputeScalarRange
 {
   template <class ArrayT, typename RangeValueType>
-  bool operator()(ArrayT* array, RangeValueType* ranges, AllValues)
+  bool operator()(ArrayT* array, RangeValueType* ranges, vtkAllValues)
   {
     AllValuesMinAndMax<NumComps, ArrayT> minmax(array);
     vtkSMPTools::For(0, array->GetNumberOfTuples(), minmax);
@@ -435,7 +435,7 @@ public:
 };
 
 template <class ArrayT, typename RangeValueType>
-bool GenericComputeScalarRange(ArrayT* array, RangeValueType* ranges, AllValues)
+bool GenericComputeScalarRange(ArrayT* array, RangeValueType* ranges, vtkAllValues)
 {
   AllValuesGenericMinAndMax<ArrayT> minmax(array);
   vtkSMPTools::For(0, array->GetNumberOfTuples(), minmax);
@@ -518,7 +518,7 @@ bool DoComputeScalarRange(ArrayT* array, RangeValueType* ranges, ValueType tag)
 //----------------------------------------------------------------------------
 // generic implementation that operates on ValueType.
 template <typename ArrayT, typename RangeValueType>
-bool DoComputeVectorRange(ArrayT* array, RangeValueType range[2], AllValues)
+bool DoComputeVectorRange(ArrayT* array, RangeValueType range[2], vtkAllValues)
 {
   range[0] = vtkTypeTraits<RangeValueType>::Max();
   range[1] = vtkTypeTraits<RangeValueType>::Min();

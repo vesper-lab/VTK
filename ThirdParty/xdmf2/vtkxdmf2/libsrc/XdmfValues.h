@@ -56,7 +56,7 @@ An XdmfDataItem Node Looks like :
   Precision="4"
   DataType="Float"
   Format="HDF">
-    MyData.h5:/AllValues/ThisArray
+    MyData.h5:/vtkAllValues/ThisArray
 </DataItem>
 \endverbatim
 

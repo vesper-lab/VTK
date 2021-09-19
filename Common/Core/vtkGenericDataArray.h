@@ -414,7 +414,7 @@ namespace vtkDataArrayPrivate
 template <typename A, typename R, typename T>
 bool DoComputeScalarRange(A*, R*, T);
 template <typename A, typename R>
-bool DoComputeVectorRange(A*, R[2], AllValues);
+bool DoComputeVectorRange(A*, R[2], vtkAllValues);
 template <typename A, typename R>
 bool DoComputeVectorRange(A*, R[2], FiniteValues);
 } // namespace vtkDataArrayPrivate
@@ -466,11 +466,11 @@ class vtkScaledSOADataArrayTemplate;
 
 #define VTK_INSTANTIATE_VALUERANGE_ARRAYTYPE(ArrayType, ValueType)                                 \
   template VTKCOMMONCORE_EXPORT bool DoComputeScalarRange(                                         \
-    ArrayType*, ValueType*, vtkDataArrayPrivate::AllValues);                                       \
+    ArrayType*, ValueType*, vtkDataArrayPrivate::vtkAllValues);                                       \
   template VTKCOMMONCORE_EXPORT bool DoComputeScalarRange(                                         \
     ArrayType*, ValueType*, vtkDataArrayPrivate::FiniteValues);                                    \
   template VTKCOMMONCORE_EXPORT bool DoComputeVectorRange(                                         \
-    ArrayType*, ValueType[2], vtkDataArrayPrivate::AllValues);                                     \
+    ArrayType*, ValueType[2], vtkDataArrayPrivate::vtkAllValues);                                     \
   template VTKCOMMONCORE_EXPORT bool DoComputeVectorRange(                                         \
     ArrayType*, ValueType[2], vtkDataArrayPrivate::FiniteValues);
 
@@ -516,18 +516,18 @@ namespace vtkDataArrayPrivate
 template <typename A, typename R, typename T>
 bool DoComputeScalarRange(A*, R*, T);
 template <typename A, typename R>
-bool DoComputeVectorRange(A*, R[2], AllValues);
+bool DoComputeVectorRange(A*, R[2], vtkAllValues);
 template <typename A, typename R>
 bool DoComputeVectorRange(A*, R[2], FiniteValues);
 } // namespace vtkDataArrayPrivate
 
 #define VTK_DECLARE_VALUERANGE_ARRAYTYPE(ArrayType, ValueType)                                     \
   extern template VTKCOMMONCORE_EXPORT bool DoComputeScalarRange(                                  \
-    ArrayType*, ValueType*, vtkDataArrayPrivate::AllValues);                                       \
+    ArrayType*, ValueType*, vtkDataArrayPrivate::vtkAllValues);                                       \
   extern template VTKCOMMONCORE_EXPORT bool DoComputeScalarRange(                                  \
     ArrayType*, ValueType*, vtkDataArrayPrivate::FiniteValues);                                    \
   extern template VTKCOMMONCORE_EXPORT bool DoComputeVectorRange(                                  \
-    ArrayType*, ValueType[2], vtkDataArrayPrivate::AllValues);                                     \
+    ArrayType*, ValueType[2], vtkDataArrayPrivate::vtkAllValues);                                     \
   extern template VTKCOMMONCORE_EXPORT bool DoComputeVectorRange(                                  \
     ArrayType*, ValueType[2], vtkDataArrayPrivate::FiniteValues);
 

@@ -1192,7 +1192,7 @@ bool vtkGenericDataArray<DerivedT, ValueTypeT>::ComputeScalarValueRange(ValueTyp
   using namespace vtk_GDA_detail;
   using Supported = IsSupported<DerivedT, ValueTypeT>;
   return ComputeScalarValueRangeImpl(
-    static_cast<DerivedT*>(this), ranges, vtkDataArrayPrivate::AllValues{}, Supported{});
+    static_cast<DerivedT*>(this), ranges, vtkDataArrayPrivate::vtkAllValues{}, Supported{});
 }
 
 //-----------------------------------------------------------------------------
@@ -1202,7 +1202,7 @@ bool vtkGenericDataArray<DerivedT, ValueTypeT>::ComputeVectorValueRange(ValueTyp
   using namespace vtk_GDA_detail;
   using Supported = IsSupported<DerivedT, ValueTypeT>;
   return ComputeVectorValueRangeImpl(
-    static_cast<DerivedT*>(this), range, vtkDataArrayPrivate::AllValues{}, Supported{});
+    static_cast<DerivedT*>(this), range, vtkDataArrayPrivate::vtkAllValues{}, Supported{});
 }
 
 //-----------------------------------------------------------------------------

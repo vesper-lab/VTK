@@ -599,7 +599,7 @@ vtkArrayDownCast_FastCastMacro(vtkDataArray);
 // vtkGenericDataArray.h as well.
 namespace vtkDataArrayPrivate
 {
-struct AllValues
+struct vtkAllValues
 {
 };
 struct FiniteValues
